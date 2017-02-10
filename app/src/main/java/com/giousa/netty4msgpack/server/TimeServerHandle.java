@@ -20,11 +20,15 @@ public class TimeServerHandle extends ChannelInboundHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg)
             throws Exception {
+
         System.out.println("msg:"+msg);
 
-//        MessagePack messagePack = (MessagePack) msg;//阻塞，若是不通过，不会继续获取数据
+        List<Student> s = (List<Student>) msg;
+        System.out.println(s);
 
-
+        System.out.println("type="+s.get(0));
+        System.out.println("id="+s.get(1));
+        System.out.println("name="+s.get(2));
 
     }
 
