@@ -1,5 +1,7 @@
 package com.giousa.netty4msgpack.code;
 
+import com.giousa.netty4msgpack.model.Student;
+
 import org.msgpack.MessagePack;
 
 import java.util.List;
@@ -24,7 +26,7 @@ public class MsgPackDecode extends MessageToMessageDecoder<ByteBuf> {
         array=new byte[length];
         msg.getBytes(msg.readerIndex(), array,0,length);
         MessagePack msgpack=new MessagePack();
-        out.add(msgpack.read(array));
+        out.add(msgpack.read(array, Student.class));
     }
 
 }

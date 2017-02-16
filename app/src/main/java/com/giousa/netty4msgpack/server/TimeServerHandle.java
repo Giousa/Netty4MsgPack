@@ -23,12 +23,17 @@ public class TimeServerHandle extends ChannelInboundHandlerAdapter {
 
         System.out.println("msg:"+msg);
 
-        List<Student> s = (List<Student>) msg;
-        System.out.println(s);
-
-        System.out.println("type="+s.get(0));
-        System.out.println("id="+s.get(1));
-        System.out.println("name="+s.get(2));
+//        List<Student> s = (List<Student>) msg;
+//        System.out.println(s);
+//
+//        System.out.println("type="+s.get(0));
+//        System.out.println("id="+s.get(1));
+//        System.out.println("name="+s.get(2));
+        Student student = (Student) msg;
+        System.out.println("student="+student.toString());
+        System.out.println("student name="+student.getName());
+        System.out.println("student id="+student.getId());
+        System.out.println("student type="+student.getType());
 
     }
 
